@@ -23,7 +23,17 @@
             <h2>Woodcliff Lake, NJ</h2>
             <p class="tagline">Luxury Estate Managed by GCRE</p>
             <!-- Contact form for visitors to reach out directly -->
-            <form class="contact-form" action="mailto:info@example.com" method="post" enctype="text/plain">
+            <!--
+              The contact form below submits to a secure HTTPS endpoint provided by FormSubmit.co.
+              Replace "your-email@example.com" with the email address that should receive
+              inquiries. The use of HTTPS prevents browsers from warning that the form is
+              insecure, which happens when using a mailto: action on a secure (HTTPS) page.
+            -->
+            <form id="contact" class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+                <!-- FormSubmit will add a honeypot field automatically; include hidden fields
+                     for subject or redirect page if desired. -->
+                <input type="hidden" name="_subject" value="New inquiry from Woodcliff Lake landing page">
+                <input type="hidden" name="_next" value="https://gcre-nj.github.io/woodcliff-lake-landing/thank-you.html">
                 <div class="form-row">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
@@ -186,7 +196,7 @@
                 Get in touch to learn how GCRE can assist with buying, selling, investing or managing your
                 property.
             </p>
-            <a class="btn" href="mailto:info@example.com?subject=Contact%20GCRE">Get in Touch</a>
+            <a class="btn" href="#contact">Get in Touch</a>
         </div>
     </section>
 
